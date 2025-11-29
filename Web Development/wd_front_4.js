@@ -10,14 +10,13 @@ Instructions:
 3. Run `node wd_checker.js 5 your_email_here` to verify and get your key.
 */
 
-export const YOUR_EMAIL = "your_email_here";
+export const YOUR_EMAIL = "ofunimtabitha@gmail.com";
 
 // === TASK 1 ===
 // Create a functional React component called Greeting that takes a 'name' prop
 // and returns: <h2>Hello, [name]!</h2>
-export function Greeting(name) {
-  // TODO: your code here
-  return "";
+export function Greeting({ name }) {
+  return <h2>Hello, {name}!</h2>;
 }
 
 // === TASK 2 ===
@@ -25,16 +24,14 @@ export function Greeting(name) {
 // Return the code string exactly like this (replace n with YOUR_EMAIL.length):
 // "const [count, setCount] = useState(n);"
 export function useCountSnippet(name) {
-  // TODO: your code here
-  return "";
+return `const [count, setCount] = useState(${name.length});`;
 }
 
 // === TASK 3 ===
 // Given an array of items ["React", "HTML", "CSS"], return a JSX list as a string:
 // "<ul><li>React</li><li>HTML</li><li>CSS</li></ul>"
 export function renderList() {
-  // TODO: your code here
-  return "";
+return "<ul><li>React</li><li>HTML</li><li>CSS</li></ul>";
 }
 
 // === TASK 4 ===
@@ -42,14 +39,13 @@ export function renderList() {
 // If even → "Even Length", else → "Odd Length".
 // Return string like: "<button class='btn btn-success'>Even Length</button>"
 export function styledButton(name) {
-  // TODO: your code here
-  return "";
+  const label = name.length % 2 === 0 ? "Even Length" : "Odd Length";
+  return `<button class='btn btn-success'>${label}</button>`;
 }
 
 // === TASK 5 ===
 // Combine all previous elements into one React component string (for fun!):
 // "<div><h2>Hello, [name]!</h2><ul>...</ul><button>...</button></div>"
 export function fullComponent(name) {
-  // TODO: your code here
-  return "";
+  return `<div>${Greeting({ name })}${renderList()}${styledButton(name)}</div>`;
 }
